@@ -1,0 +1,11 @@
+# PyInstaller intermediates
+build/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Virtual environments
+venv/
+.venv/

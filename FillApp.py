@@ -103,27 +103,34 @@ def start_processing():
     # Open the output folder in the file explorer
     os.startfile(output_folder)
 
-# Create the main window
-root = tk.Tk()
-root.title("Document Processor")
+def main():
+    global exposant_list_entry, template_entry, output_folder_entry
 
-# Create and place the GUI components
-tk.Label(root, text="Exposant List:").grid(row=0, column=0, padx=10, pady=10)
-exposant_list_entry = tk.Entry(root, width=50)
-exposant_list_entry.grid(row=0, column=1, padx=10, pady=10)
-tk.Button(root, text="Browse...", command=select_exposant_list).grid(row=0, column=2, padx=10, pady=10)
+    # Create the main window
+    root = tk.Tk()
+    root.title("Document Processor")
 
-tk.Label(root, text="Template:").grid(row=1, column=0, padx=10, pady=10)
-template_entry = tk.Entry(root, width=50)
-template_entry.grid(row=1, column=1, padx=10, pady=10)
-tk.Button(root, text="Browse...", command=select_template).grid(row=1, column=2, padx=10, pady=10)
+    # Create and place the GUI components
+    tk.Label(root, text="Exposant List:").grid(row=0, column=0, padx=10, pady=10)
+    exposant_list_entry = tk.Entry(root, width=50)
+    exposant_list_entry.grid(row=0, column=1, padx=10, pady=10)
+    tk.Button(root, text="Browse...", command=select_exposant_list).grid(row=0, column=2, padx=10, pady=10)
 
-tk.Label(root, text="Output Folder:").grid(row=2, column=0, padx=10, pady=10)
-output_folder_entry = tk.Entry(root, width=50)
-output_folder_entry.grid(row=2, column=1, padx=10, pady=10)
-tk.Button(root, text="Browse...", command=select_output_folder).grid(row=2, column=2, padx=10, pady=10)
+    tk.Label(root, text="Template:").grid(row=1, column=0, padx=10, pady=10)
+    template_entry = tk.Entry(root, width=50)
+    template_entry.grid(row=1, column=1, padx=10, pady=10)
+    tk.Button(root, text="Browse...", command=select_template).grid(row=1, column=2, padx=10, pady=10)
 
-tk.Button(root, text="Start Processing", command=start_processing).grid(row=3, column=0, columnspan=3, padx=10, pady=20)
+    tk.Label(root, text="Output Folder:").grid(row=2, column=0, padx=10, pady=10)
+    output_folder_entry = tk.Entry(root, width=50)
+    output_folder_entry.grid(row=2, column=1, padx=10, pady=10)
+    tk.Button(root, text="Browse...", command=select_output_folder).grid(row=2, column=2, padx=10, pady=10)
 
-# Run the main event loop
-root.mainloop()
+    tk.Button(root, text="Start Processing", command=start_processing).grid(row=3, column=0, columnspan=3, padx=10, pady=20)
+
+    # Run the main event loop
+    root.mainloop()
+
+
+if __name__ == "__main__":
+    main()

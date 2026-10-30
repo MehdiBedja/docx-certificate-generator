@@ -1,6 +1,6 @@
-# AutomateDocsFilling
+# DOCX Certificate Generator
 
-[![Tests](https://github.com/MehdiBedja/AutomateDocsFilling/actions/workflows/tests.yml/badge.svg)](https://github.com/MehdiBedja/AutomateDocsFilling/actions/workflows/tests.yml)
+[![Tests](https://github.com/MehdiBedja/docx-certificate-generator/actions/workflows/tests.yml/badge.svg)](https://github.com/MehdiBedja/docx-certificate-generator/actions/workflows/tests.yml)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![python-docx](https://img.shields.io/badge/python--docx-Word%20automation-2B579A)
 
@@ -35,8 +35,8 @@ Optional columns (passport, nationality, address) are skipped when absent.
 **From source:**
 
 ```bash
-git clone https://github.com/MehdiBedja/AutomateDocsFilling.git
-cd AutomateDocsFilling
+git clone https://github.com/MehdiBedja/docx-certificate-generator.git
+cd docx-certificate-generator
 pip install -r requirements.txt
 python FillApp.py
 ```

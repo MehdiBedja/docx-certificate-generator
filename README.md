@@ -1,15 +1,8 @@
-# DOCX Certificate Generator
+# DOCX certificate generator
 
-[![Tests](https://github.com/MehdiBedja/docx-certificate-generator/actions/workflows/tests.yml/badge.svg)](https://github.com/MehdiBedja/docx-certificate-generator/actions/workflows/tests.yml)
-![Python](https://img.shields.io/badge/python-3.10%2B-blue)
-![python-docx](https://img.shields.io/badge/python--docx-Word%20automation-2B579A)
-
-A small desktop tool that **generates one filled-in Word document per person** from a list. You give it a `.docx` file containing a table of people and a `.docx` template, and it produces a personalized certificate for each row (name, date of birth, passport number, nationality, address, PCR result and timestamp) in seconds. That replaces hours of copy-pasting.
+A small desktop tool that generates one filled-in Word document per person from a list. You give it a `.docx` file containing a table of people and a `.docx` template, and it produces a personalized certificate for each row (name, date of birth, passport number, nationality, address, PCR result and timestamp).
 
 It was built to automate PCR certificate paperwork for event exhibitors, and ships as a single Windows `.exe` so non-technical staff can use it.
-
-![App window](docs/screenshots/app.png)
-<!-- Screenshot placeholder: add docs/screenshots/app.png -->
 
 ## How it works
 
@@ -22,17 +15,17 @@ flowchart LR
     GUI[Tkinter GUI<br/>pick files → Start] --> R
 ```
 
-1. **Read the list.** The first table of the list document is parsed, and its header row becomes the keys for every person.
-2. **Fill the template.** For each person, the template is loaded fresh and values are appended after the existing labels in table 1 (identity) and table 2 (test type, result, date and time).
-3. **Save.** Each document is written as `<Nom> <PRENOM>.docx` in the chosen folder, which then opens automatically.
+1. Read the list. The first table of the list document is parsed, and its header row becomes the keys for every person.
+2. Fill the template. For each person, the template is loaded fresh and values are appended after the existing labels in table 1 (identity) and table 2 (test type, result, date and time).
+3. Save. Each document is written as `<Nom> <PRENOM>.docx` in the chosen folder, which then opens automatically.
 
 Optional columns (passport, nationality, address) are skipped when absent.
 
 ## Run it
 
-**Windows, no install:** download [`dist/FillApp.exe`](dist/FillApp.exe) and double-click it.
+Windows, no install: download [`dist/FillApp.exe`](dist/FillApp.exe) and double-click it.
 
-**From source:**
+From source:
 
 ```bash
 git clone https://github.com/MehdiBedja/docx-certificate-generator.git
@@ -41,9 +34,9 @@ pip install -r requirements.txt
 python FillApp.py
 ```
 
-Then pick the exhibitor list, the template and an output folder, and click **Start Processing**.
+Then pick the exhibitor list, the template and an output folder, and click Start Processing.
 
-**Build the exe:**
+Build the exe:
 
 ```bash
 pip install pyinstaller
@@ -70,4 +63,4 @@ The tests generate list and template documents on the fly and cover table parsin
 
 ## Author
 
-**Mahdi Bedja** · [Portfolio](https://mehdibedja.github.io) · [LinkedIn](https://www.linkedin.com/in/mahdi-bedja-0b94031b3/)
+Mahdi Bedja · [Portfolio](https://mehdibedja.github.io) · [LinkedIn](https://www.linkedin.com/in/mahdi-bedja-0b94031b3/)
